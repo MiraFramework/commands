@@ -35,6 +35,7 @@ class CreateModel extends Command
         $file = fopen('application/App/'.$app.'/Models/'.$model.'.php', "w");
         $data = "<?php\n\n";
         $data .= "namespace App\\$app\\Models;\n\n";
+        $data .= "use Mira\Models\Model;\n\n";
         $data .= "class $model extends Model\n";
         $data .= "{\n\x20\x20\x20\x20\x20// A Model for the $app App\n}\n";
         fwrite($file, $data);
