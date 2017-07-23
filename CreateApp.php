@@ -44,8 +44,8 @@ class CreateApp extends Command
 
         $configfile = "<?php\n\n";
         $configfile .= "return [\n";
-        $configfile .= "\x20\x20\x20\x20\x20 'header' => '$app.header',\n";
-        $configfile .= "\x20\x20\x20\x20\x20 'footer' => '$app.footer',\n";
+        $configfile .= "\x20\x20\x20\x20\x20//'header' => '$app.header',\n";
+        $configfile .= "\x20\x20\x20\x20\x20//'footer' => '$app.footer',\n";
         $configfile .= "];\n";
         if (file_put_contents("application/App/$app/config.php", $configfile)) {
             $output->writeln("created successfully!\n");
