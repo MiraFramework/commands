@@ -104,7 +104,7 @@ class CreateApp extends Command
         if (fopen("application/App/$app/Routes/Routes.php", "a")) {
             $startroute = "<?php\n\n";
             $startroute .= "use Mira\Route;\n";
-            $startroute .= "use Mira\Render;\n\n";
+            $startroute .= "use Mira\Render\Render;\n\n";
             $startroute .= "// Routes Here\n";
             file_put_contents("application/App/$app/Routes/Routes.php", $startroute);
             $output->writeln("created successfully!\n");
