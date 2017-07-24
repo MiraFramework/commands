@@ -29,6 +29,11 @@ class CreateEvent extends Command
             $output->writeln("Event already exists. Try renaming this event.");
             return false;
         }
+
+        if (!file_exists("application/App/Providers/Events")) {
+            mkdir("application/App/Providers/Events");
+        }
+
         $output->writeln("Creating Event ... ");
         if (fopen("application/Providers/Events/$eventName.php", "a")) {
             $startevent = "<?php\n\n";
